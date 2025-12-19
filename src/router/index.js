@@ -1,21 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import GeneratorView from '../views/GeneratorView.vue'
-import LibraryView from '../views/LibraryView.vue'
+
+// Импортируем компоненты
+import HomePage from '../pages/HomePage.vue'
+import AdvancedPage from '../pages/AdvancedPage.vue'
+
+const routes = [
+    {
+        path: '/',
+        name: 'Home',
+        component: HomePage
+    },
+    {
+        path: '/advanced',
+        name: 'Advanced',
+        component: AdvancedPage
+    }
+]
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes: [
-        {
-            path: '/',
-            name: 'generator',
-            component: GeneratorView
-        },
-        {
-            path: '/library',
-            name: 'library',
-            component: LibraryView
-        }
-    ]
+    history: createWebHistory(),
+    routes
 })
 
 export default router
